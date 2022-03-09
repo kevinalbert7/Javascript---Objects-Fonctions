@@ -163,20 +163,24 @@ const generatePassword = (num) => {
     
     const array = []
     if (num < 6 || num > 15) {
-        console.log("error")
+        return "error"
     } else {
         for (var i = 0; i <= num; i++) {
             let random = String.fromCharCode(Math.floor(Math.random() * (90 - 65 + 1)) + 65) // Les lettres de l'alphabet en table ASCII vont de 65 à 90
             array.push(random)
             var password = array.join("")
         }
-        console.log("password :", password)
+        return password
     }
 }
 
-generatePassword(5)
-generatePassword(20)
-generatePassword(13)
+var result1 = generatePassword(5)
+var result2 = generatePassword(20)
+var result3 = generatePassword(13)
+
+console.log(result1)
+console.log(result2)
+console.log(result3)
 
 // ⭐ Bonus II
 console.log("-----------------------------------Bonus II--------------------------------------")
@@ -186,4 +190,23 @@ console.log("-----------------------------------Bonus II------------------------
 // - Appelez la fonction deux fois avec pour argument 5, une fois pour un `joueur1` et l'autre pour le `joueur2`.
 // - Comparez les valeurs des deux joueurs et Affichez le joueur gagnant (celui ayant le plus grand score)
 
-// function launchDice(numberOfDice)
+const launchDice = (numberOfDice) => {
+    
+    var result = 0
+
+    for (var i = 0; i < numberOfDice; i++) {
+        result += Math.floor(Math.random() * (6 - 1 + 1)) + 1
+    }
+    return result
+}
+
+var player1 = launchDice(5)
+var player2 = launchDice(5)
+
+    if (player1 > player2) {
+        console.log("Player1 win !")
+    } else if (player1 < player2) {
+        console.log("Player2 win !")
+    } else {
+        console.log("Egality !")
+    }
