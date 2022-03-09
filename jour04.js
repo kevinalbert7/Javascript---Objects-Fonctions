@@ -159,7 +159,7 @@ console.log("-----------------------------------Bonus---------------------------
 // - Si `num` est plus petit que 6 ou plus grand que 15, la fonction retourne "error"
 
 
-function generatePassword(num) {
+const generatePassword = (num) => {
     
     const array = []
     if (num < 6 || num > 15) {
